@@ -45,7 +45,7 @@ function connect() {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, amqplib.connect("amqp://localhost:5672", function (err, conn) {
+                    return [4 /*yield*/, amqplib.connect("amqp://52.6.228.180/", function (err, conn) {
                             if (err)
                                 throw err;
                             conn.createChannel(function (errChanel, channel) {
@@ -70,7 +70,7 @@ function connect() {
                                                     body: JSON.stringify(parsedContent),
                                                 };
                                                 console.log(parsedContent);
-                                                fetch("http://localhost:3001/approved", body)
+                                                fetch("http://54.145.185.97:3001/approved", body)
                                                     .then(function () {
                                                     console.log("Cliente notificado exitosamente");
                                                 })
