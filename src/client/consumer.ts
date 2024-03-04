@@ -3,7 +3,7 @@ import * as amqplib from 'amqplib/callback_api';
 async function connect() {
     try {
         await amqplib.connect(
-            "amqp://localhost:5672",
+            "amqp://52.6.228.180/",
             (err: any, conn: amqplib.Connection) => {
                 if (err) throw err;
                 conn.createChannel((errChanel: any, channel: amqplib.Channel) => {
@@ -23,7 +23,7 @@ async function connect() {
                                 body: JSON.stringify(parsedContent),
                             };
                             console.log(parsedContent);
-                            fetch("http://localhost:3001/approved", body)
+                            fetch("http://54.145.185.97:3001/approved", body)
                                 .then(() => {
                                     console.log("Cliente notificado exitosamente");
                                 })
